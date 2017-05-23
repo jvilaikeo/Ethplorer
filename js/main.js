@@ -24,3 +24,14 @@ $.ajax({
     },
   });
 });
+$.ajax({
+    url: "https://api.gdax.com/products/BTC-USD/book",
+    // url: "https://api.ethplorer.io/getAddressInfo/0x64d141eecdee90e8cdee9a8601b957c0b2fba351" + "?apiKey=freekey",
+    type: 'GET',
+    dataType: 'json',
+    success: function(response){
+      console.log(response);
+      $('#btc-price').text(response.sequence.price);
+    },
+  });
+
